@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/logo.png" type="image/png" />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,10 +18,14 @@
     />
 
     <!-- css -->
+
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./dist/output.css" />
 
     <!-- javascript -->
+
+    <script defer src="./js/tabHandle.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script defer type="module" src="./js/main.js"></script>
 
     <title>Leaf & Brew</title>
@@ -29,23 +33,23 @@
 
   <body>
     <!-- header -->
-    <header class="relative z-50 border-solid shadow-md text-1xl">
+    <header id="header" class="relative z-50 text-sm border-solid shadow-md">
       <div class="flex items-center justify-center navbar">
         <div
-          class="flex items-center justify-between max-w-[1536px] w-full py-4 px-4 md:py-4 md:px-[72px]"
+          class="flex items-center justify-center lg:justify-between max-w-[1536px] w-full py-4 px-4 md:py-4 md:px-[72px]"
         >
           <!-- logo -->
           <a href="./" class="flex items-center justify-center flex-none">
             <img src="./assets/logo.png" alt="" class="w-24 h-24" />
             <p
-              class="text-4xl leading-none tracking-wide text-center capitalize font-lobster"
+              class="text-4xl tracking-wide text-center capitalize font-lobster"
             >
               Leaf & Brew
             </p>
           </a>
 
           <!-- nav link -->
-          <nav class="flex items-center justify-end gap-8">
+          <nav class="items-center justify-end hidden gap-8 lg:flex">
             <a
               href="./"
               class="px-4 py-1 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
@@ -71,9 +75,20 @@
               class="px-4 py-1 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
               >BLOG</a
             >
-            <span class="material-symbols-outlined text-[146px]">
-              account_circle
-            </span>
+            <div class="cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="transition duration-150 ease-in-out size-10 text-p-900 hover:text-p-700"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
           </nav>
         </div>
       </div>
@@ -104,12 +119,12 @@
         >
           <div class="flex flex-col justify-center gap-4 xl:items-start">
             <h2
-              class="mb-2 text-2xl font-semibold leading-none tracking-wider text-center uppercase font-inter"
+              class="mb-2 text-xl font-semibold tracking-wider text-center uppercase font-inter"
             >
               Hơn một trăm hương vị trà
             </h2>
             <h1
-              class="leading-none tracking-wide text-center capitalize text-[64px] font-lobster"
+              class="tracking-wide text-center capitalize text-[64px] font-lobster"
             >
               Trà Đặc Biệt Chế Tác
             </h1>
@@ -124,6 +139,319 @@
               >Tìm hiểu thêm <img src="./assets/right-arrow.svg" alt=""
             /></a>
           </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- partner logo -->
+    <section id="partner-logo">
+      <div class="container flex flex-col gap-4">
+        <!-- title -->
+        <h2
+          class="mb-2 text-2xl font-semibold tracking-wider uppercase font-inter"
+        >
+          ĐƯỢC TIN CẬY BỞI
+        </h2>
+        <p class="text-[32px] tracking-wide capitalize font-lobster">
+          Những đơn vị phân phối uy tín
+        </p>
+        <!-- logo -->
+        <div class="container">
+          <div
+            id="partner-logo-list"
+            class="flex flex-none mt-12 logos-wrapper gap-14 pl-14 mask-[linear-gradient(to_right,transparent,black,transparent)]"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- products -->
+    <section id="partner-logo" class="container">
+      <div class="flex flex-col gap-12">
+        <!-- title -->
+        <h2
+          class="mb-2 text-xl font-semibold tracking-wider uppercase font-inter"
+        >
+          Khám phá
+        </h2>
+        <p class="text-[32px] tracking-wide capitalize font-lobster">
+          Một tách trà, muôn hương vị
+        </p>
+        <!--  -->
+        <div id="products-tabs" class="flex flex-col gap-4 tab-links">
+          <!-- tab -->
+          <ul
+            class="flex flex-wrap items-center justify-center gap-8 my-8 text-xl font-medium tracking-wider uppercase font-inter md:gap-4"
+          >
+            <li>
+              <a
+                href="#olong"
+                class="px-4 py-2 text-white transition-opacity duration-500 shadow-lg tab-btn active bg-p-600"
+                >Trà Oolong</a
+              >
+            </li>
+            <li>|</li>
+            <li>
+              <a
+                href="#sencha"
+                class="px-4 py-2 transition-opacity duration-500 tab-btn"
+                >Sencha Tea</a
+              >
+            </li>
+            <li>|</li>
+            <li>
+              <a
+                href="#hongcha"
+                class="px-4 py-2 transition-opacity duration-500 tab-btn"
+                >Hồng Trà Assam</a
+              >
+            </li>
+            <li>|</li>
+            <li>
+              <a
+                href="#hoanhai"
+                class="px-4 py-2 transition-opacity duration-500 tab-btn"
+                >Trà Hoa Nhài</a
+              >
+            </li>
+            <li>|</li>
+            <li>
+              <a
+                href="#peppermint"
+                class="px-4 py-2 transition-opacity duration-500 tab-btn"
+                >Peppermint Tea</a
+              >
+            </li>
+          </ul>
+
+          <!-- content -->
+          <div class="tab-content-wrapper">
+            <div id="olong" class="tab-content active">
+              <div
+                class="grid grid-cols-1 gap-12 md:grid-cols-1 md:grid-cols-3"
+              >
+                <img
+                  src="./assets/product_1.jpg"
+                  alt="matcha"
+                  class="object-cover col-span-2 productImg"
+                />
+                <div class="grid grid-flow-row gap-4 auto-rows-max">
+                  <h3
+                    class="text-2xl font-semibold tracking-wider underline uppercase font-inter decoration-solid"
+                  >
+                    Trà Oolong
+                  </h3>
+                  <h4 class="text-xl font-semibold tracking-wider font-inter">
+                    Hòa nhịp hương vị, nâng tầm khoảnh khắc
+                  </h4>
+                  <p class="text-lg font-inter">
+                    Trà Oolong là một trong những loại trà bán lên men nhẹ, nổi
+                    bật với hương thơm tự nhiên tinh tế và vị hậu ngọt lâu dài
+                    trên đầu lưỡi. Xuất xứ từ các vùng núi cao của Trung Quốc và
+                    Đài Loan, lá trà Oolong trải qua quy trình chế biến cầu kỳ,
+                    bao gồm làm héo, lăn, lên men một phần và sấy khô, tạo nên
+                    sự cân bằng giữa hương thơm của trà xanh và độ đậm đà của
+                    trà đen. Oolong nổi bật với khả năng giúp tinh thần tỉnh
+                    táo, thúc đẩy tuần hoàn máu và hỗ trợ tiêu hóa.<br />
+                    Hương vị của trà Oolong mềm mại, hơi ngọt, đôi khi mang chút
+                    hương hoa nhẹ nhàng, tạo cảm giác thư thái khi thưởng thức.
+                    Trà Oolong không chỉ là thức uống, mà còn là trải nghiệm
+                    thiền định, giúp bạn lắng đọng tâm trí giữa nhịp sống hối
+                    hả. Trà Oolong có thể pha nhiều lần mà hương vị vẫn giữ
+                    nguyên sự tươi mới, từ những ngụm đầu đến những ngụm cuối
+                    cùng. Khi pha, bạn nên sử dụng nước khoảng 90 ~ 95°C để giữ
+                    trọn vẹn hương thơm tự nhiên, đồng thời tránh làm trà bị
+                    đắng. Hãy thử thưởng thức trà Oolong vào buổi sáng hoặc khi
+                    cần một khoảng lặng thư giãn, bạn sẽ cảm nhận được sự cân
+                    bằng hoàn hảo giữa tinh thần và vị giác.
+                  </p>
+                  <button class="w-[200px] h-auto">
+                    <a class="btn" href=""
+                      >Chi tiết <img src="./assets/right-arrow.svg" alt=""
+                    /></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="sencha" class="tab-content">
+              <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+                <img
+                  src="./assets/product_1.jpg"
+                  alt="matcha"
+                  class="object-cover col-span-2 productImg"
+                />
+                <div class="grid grid-flow-row gap-4 auto-rows-max">
+                  <h3
+                    class="text-2xl font-semibold tracking-wider uppercase font-inter"
+                  >
+                    Trà Xanh Sencha
+                  </h3>
+                  <h4 class="text-xl font-semibold tracking-wider font-inter">
+                    Tinh túy từ lá xanh, tươi mát mỗi ngày
+                  </h4>
+                  <p class="text-lg font-inter">
+                    Trà xanh Sencha là loại trà phổ biến nhất ở Nhật Bản, được
+                    chế biến từ những lá trà tươi mới hái, hấp và sấy nhẹ.
+                    Sencha mang hương thơm trong trẻo, thanh mát và vị chát nhẹ
+                    đặc trưng, tạo nên sự cân bằng tuyệt vời giữa tươi mới và
+                    tinh tế. <br />Đây là loại trà giúp tinh thần tỉnh táo, tăng
+                    cường trao đổi chất và hỗ trợ sức khỏe tim mạch. Một tách
+                    Sencha chuẩn sẽ có màu xanh sáng, hương thơm dịu dàng, vị
+                    chát nhẹ xen lẫn hậu ngọt, mang đến cảm giác sảng khoái ngay
+                    từ ngụm đầu tiên. Sencha thường được uống vào buổi sáng hoặc
+                    sau bữa ăn để thanh lọc cơ thể và làm dịu tâm trí. <br />Bên
+                    cạnh đó, Sencha còn chứa nhiều chất chống oxy hóa, giúp làm
+                    chậm quá trình lão hóa và nâng cao sức đề kháng. Pha Sencha
+                    đòi hỏi sự tinh tế: nước khoảng 70 ~ 80°C là lý tưởng, giúp
+                    lá trà giải phóng hương thơm mà không tạo vị đắng. Trà
+                    Sencha không chỉ là thức uống, mà còn là nghệ thuật kết hợp
+                    giữa thẩm mỹ, sức khỏe và thưởng thức. Mỗi tách trà là một
+                    khoảnh khắc tĩnh lặng, giúp bạn tái tạo năng lượng và cân
+                    bằng cảm xúc.
+                  </p>
+                  <button class="w-[200px] h-auto">
+                    <a class="btn" href=""
+                      >Chi tiết <img src="./assets/right-arrow.svg" alt=""
+                    /></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="hongcha" class="tab-content">
+              <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+                <img
+                  src="./assets/product_1.jpg"
+                  alt="matcha"
+                  class="object-cover col-span-2 productImg"
+                />
+                <div class="grid grid-flow-row gap-4 auto-rows-max">
+                  <h3
+                    class="text-2xl font-semibold tracking-wider uppercase font-inter"
+                  >
+                    Hồng Trà Assam
+                  </h3>
+                  <h4 class="text-xl font-semibold tracking-wider font-inter">
+                    Hương đậm đà, khơi nguồn năng lượng
+                  </h4>
+                  <p class="text-lg font-inter">
+                    Hồng trà Assam có nguồn gốc từ vùng Assam, Ấn Độ, nổi bật
+                    với màu nước đỏ cánh gián và hương vị đậm đà, mạnh mẽ. Đây
+                    là loại trà lý tưởng cho những ai yêu thích hương vị trọn
+                    vẹn, hơi ngọt và có chút chát tự nhiên. <br />Hồng trà Assam
+                    thường được dùng vào buổi sáng để khởi đầu ngày mới đầy năng
+                    lượng. Quy trình chế biến hồng trà Assam trải qua việc làm
+                    héo, cuộn và oxy hóa hoàn toàn, giúp lá trà giữ được trọn
+                    vẹn hương thơm tự nhiên và vị đậm đà đặc trưng. Uống một
+                    tách trà Assam, bạn sẽ cảm nhận vị ngọt hậu lâu dài cùng
+                    hương đất và hương hoa nhẹ nhàng, tạo sự sảng khoái và tỉnh
+                    táo.<br />
+                    Hồng trà Assam cũng là lựa chọn hoàn hảo cho những món trà
+                    pha sữa, bởi vị mạnh mẽ của nó cân bằng hoàn hảo với độ béo
+                    của sữa. Assam giúp tinh thần tỉnh táo, tăng cường tập trung
+                    và cải thiện hệ tiêu hóa. Pha trà với nước sôi 95 ~ 100°C và
+                    thời gian 3 ~ 5 phút sẽ giúp chiết xuất hương vị tối ưu,
+                    mang đến trải nghiệm thưởng trà trọn vẹn.
+                  </p>
+                  <button class="w-[200px] h-auto">
+                    <a class="btn" href=""
+                      >Chi tiết <img src="./assets/right-arrow.svg" alt=""
+                    /></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="hoanhai" class="tab-content">
+              <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+                <img
+                  src="./assets/product_1.jpg"
+                  alt="matcha"
+                  class="object-cover col-span-2 productImg"
+                />
+                <div class="grid grid-flow-row gap-4 auto-rows-max">
+                  <h3
+                    class="text-2xl font-semibold tracking-wider uppercase font-inter"
+                  >
+                    Trà Hoa Nhài (Jasmine Tea)
+                  </h3>
+                  <h4 class="text-xl font-semibold tracking-wider font-inter">
+                    Hương hoa tinh khiết, dịu dàng mỗi ngày
+                  </h4>
+                  <p class="text-lg font-inter">
+                    Trà hoa nhài là sự kết hợp hoàn hảo giữa trà xanh hoặc trà
+                    trắng và hương hoa nhài tươi, tạo nên hương thơm dịu nhẹ,
+                    thanh khiết và vị ngọt mượt mà. Đây là loại trà nổi tiếng ở
+                    Trung Quốc, thường dùng để thư giãn, giảm căng thẳng và mang
+                    đến cảm giác thanh bình.<br />
+
+                    Quy trình ướp hoa nhài với lá trà đòi hỏi kỹ thuật tinh tế:
+                    lá trà được trộn với hoa nhài tươi vào ban đêm, để lá hấp
+                    thụ trọn vẹn hương thơm tự nhiên của hoa. Khi pha, trà có
+                    màu vàng sáng hoặc xanh nhạt, hương hoa nhài lan tỏa dịu
+                    dàng và vị trà mềm mại. Trà hoa nhài giúp tinh thần thư
+                    thái, làm dịu tâm trí và tăng cường sự tỉnh táo nhẹ
+                    nhàng.<br />
+
+                    Đây là loại trà lý tưởng để thưởng thức vào buổi chiều hoặc
+                    trong các buổi trò chuyện nhẹ nhàng. Ngoài việc mang lại
+                    hương vị tinh tế, trà hoa nhài còn chứa nhiều chất chống oxy
+                    hóa, hỗ trợ tiêu hóa và cải thiện sức khỏe tim mạch. Pha trà
+                    với nước khoảng 80°C, 2 ~ 3 phút, bạn sẽ có một tách trà
+                    hoàn hảo với hương thơm quyến rũ và vị ngọt thanh tự nhiên.
+                  </p>
+                  <button class="w-[200px] h-auto">
+                    <a class="btn" href=""
+                      >Chi tiết <img src="./assets/right-arrow.svg" alt=""
+                    /></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="peppermint" class="tab-content">
+              <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+                <img
+                  src="./assets/product_1.jpg"
+                  alt="matcha"
+                  class="object-cover col-span-2 productImg"
+                />
+                <div class="grid grid-flow-row gap-4 auto-rows-max">
+                  <h3
+                    class="text-2xl font-semibold tracking-wider uppercase font-inter"
+                  >
+                    Trà Thảo Mộc Bạc Hà
+                  </h3>
+                  <h4 class="text-xl font-semibold tracking-wider font-inter">
+                    Mát lành tinh thần, nhẹ nhàng cơ thể
+                  </h4>
+                  <p class="text-lg font-inter">
+                    Trà thảo mộc bạc hà là loại trà không chứa caffeine, nổi bật
+                    với hương bạc hà tươi mát, giúp giải nhiệt cơ thể và thanh
+                    lọc tinh thần. Đây là lựa chọn hoàn hảo cho những ai muốn
+                    thư giãn sau một ngày dài, hoặc làm dịu hệ tiêu hóa sau bữa
+                    ăn.<br />
+
+                    Bạc hà được thu hoạch từ những cánh đồng tươi mát, phơi khô
+                    tự nhiên và giữ trọn vẹn tinh dầu thơm mát. Khi pha, trà có
+                    màu vàng nhạt hoặc xanh nhẹ, hương bạc hà lan tỏa mạnh mẽ,
+                    mang đến cảm giác sảng khoái ngay từ ngụm đầu tiên. Trà bạc
+                    hà còn giúp giảm căng thẳng, làm dịu cơn đau đầu nhẹ và hỗ
+                    trợ tiêu hóa, đồng thời tăng cường lưu thông máu.<br />
+
+                    Trà bạc hà có thể uống nóng hoặc lạnh, thích hợp cho mọi
+                    thời điểm trong ngày. Pha trà với nước khoảng 90°C, để 5 ~ 7
+                    phút, bạn sẽ có một tách trà thảo mộc tinh khiết, mát lành,
+                    giúp cơ thể và tinh thần đều được thư giãn. Đây là loại trà
+                    không chỉ ngon mà còn là liệu pháp tự nhiên, mang đến sự cân
+                    bằng và thanh tịnh cho cuộc sống hiện đại.
+                  </p>
+                  <button class="w-[200px] h-auto">
+                    <a class="btn" href=""
+                      >Chi tiết <img src="./assets/right-arrow.svg" alt=""
+                    /></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

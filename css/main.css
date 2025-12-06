@@ -30,6 +30,9 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply text-base font-inter overflow-x-clip;
   }
@@ -50,5 +53,23 @@
   .header-icon {
     font-size: 164px;
     line-height: 1;
+  }
+  .logo-ticker-img {
+    @apply w-auto h-10 lg:h-12;
+  }
+}
+
+@layer components {
+  .tab-content {
+    @apply hidden;
+  }
+  .tab-content.active {
+    @apply block;
+  }
+  .tab-btn {
+    @apply px-4 py-2 transition;
+  }
+  .tab-btn.active {
+    @apply opacity-100;
   }
 }
