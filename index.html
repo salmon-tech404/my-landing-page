@@ -18,14 +18,14 @@
     />
 
     <!-- css -->
-
+    <link rel="stylesheet" href="./css/showHideNav.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./dist/output.css" />
 
     <!-- javascript -->
-
-    <script defer src="./js/tabHandle.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script defer src="./js/jquery.hidescroll.js"></script>
+    <script defer src="./js/tabHandle.js"></script>
     <script defer type="module" src="./js/main.js"></script>
 
     <title>Leaf & Brew</title>
@@ -33,7 +33,7 @@
 
   <body>
     <!-- header -->
-    <header id="header" class="relative z-50 text-sm border-solid shadow-md">
+    <header id="header" class="relative z-50 text-xl border-solid shadow-md">
       <div class="flex items-center justify-center navbar">
         <div
           class="flex items-center justify-center lg:justify-between max-w-[1536px] w-full py-4 px-4 md:py-4 md:px-[72px]"
@@ -52,27 +52,27 @@
           <nav class="items-center justify-end hidden gap-8 lg:flex">
             <a
               href="./"
-              class="px-4 py-1 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
+              class="px-5 py-2 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
               >SẢN PHẨM</a
             >
             <a
               href="./"
-              class="px-4 py-1 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
+              class="px-5 py-2 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
               >VỀ CHUNG TÔI</a
             >
             <a
               href="./"
-              class="px-4 py-1 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
+              class="px-5 py-2 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
               >KHUYẾN MÃI</a
             >
             <a
               href="./"
-              class="px-4 py-1 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
+              class="px-5 py-2 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
               >HỘI VIÊN</a
             >
             <a
               href="./"
-              class="px-4 py-1 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
+              class="px-5 py-2 text-white transition duration-150 ease-in-out bg-p-900 navLink hover:bg-p-700 hover:scale-103"
               >BLOG</a
             >
             <div class="cursor-pointer">
@@ -80,7 +80,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="transition duration-150 ease-in-out size-10 text-p-900 hover:text-p-700"
+                class="transition duration-150 ease-in-out size-12 text-p-900 hover:text-p-700"
               >
                 <path
                   fill-rule="evenodd"
@@ -148,7 +148,7 @@
       <div class="container flex flex-col gap-4">
         <!-- title -->
         <h2
-          class="mb-2 text-2xl font-semibold tracking-wider uppercase font-inter"
+          class="mb-2 text-xl font-semibold tracking-wider uppercase font-inter"
         >
           ĐƯỢC TIN CẬY BỞI
         </h2>
@@ -156,11 +156,14 @@
           Những đơn vị phân phối uy tín
         </p>
         <!-- logo -->
-        <div class="container">
+        <div
+          class="container w-[1000px] mask-[linear-gradient(to_right,transparent,black,transparent)]"
+        >
           <div
             id="partner-logo-list"
-            class="flex flex-none mt-12 logos-wrapper gap-14 pl-14 mask-[linear-gradient(to_right,transparent,black,transparent)]"
+            class="flex gap-10 mt-12 animate-scroll logos-wrapper pl-14"
           ></div>
+          <!--  -->
         </div>
       </div>
     </section>
@@ -227,9 +230,7 @@
           <!-- content -->
           <div class="tab-content-wrapper">
             <div id="olong" class="tab-content active">
-              <div
-                class="grid grid-cols-1 gap-12 md:grid-cols-1 md:grid-cols-3"
-              >
+              <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
                 <img
                   src="./assets/product_1.jpg"
                   alt="matcha"

@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./**/*.{html,js}", "./*.{html,js}"], //chỉ định các file mà Tailwind sẽ quét class
-  theme: { //Chứa tất cả giá trị CSS chuẩn của Tailwind (colors, fontSize,…).
-    extend: { //thêm hoặc ghi đè giá trị mặc định mà không mất đi giá trị Tailwind gốc
+  theme: {
+    //Chứa tất cả giá trị CSS chuẩn của Tailwind (colors, fontSize,…).
+    extend: {
+      //thêm hoặc ghi đè giá trị mặc định mà không mất đi giá trị Tailwind gốc
       colors: {
         p: {
           50: "hsl(150, 66%, 96%)", // #EEFBF5
@@ -25,6 +27,15 @@ module.exports = {
           700: "hsl(217, 17%, 40%)", // #323A46
           800: "hsl(220, 14%, 12%)", // #191D23
         },
+      },
+      keyframes: {
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        scroll: "scroll 10s linear infinite",
       },
     },
   },
