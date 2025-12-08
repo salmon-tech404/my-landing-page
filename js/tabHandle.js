@@ -5,12 +5,17 @@ tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     // xóa active tất cả các tab
     tabs.forEach((t) => {
-      t.classList.remove("bg-p-600", "text-white", "shadow-lg");
+      t.classList.remove(
+        "bg-p-600",
+        "text-white",
+        "shadow-lg",
+        "font-semibold"
+      );
       t.classList.add("text-p-900", "bg-transparent");
     });
 
     // thêm active cho tab được click
-    tab.classList.add("bg-p-600", "text-white", "shadow-lg");
+    tab.classList.add("bg-p-600", "text-white", "font-semibold", "shadow-lg");
     tab.classList.remove("text-p-900", "bg-transparent", "shadow-lg");
   });
 });

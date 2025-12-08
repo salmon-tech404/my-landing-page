@@ -25,3 +25,7 @@ $(function () {
 $(function () {
   $(".navbar").hidescroll();
 });
+
+// slow motion video
+const video = document.getElementById("bg-video");
+video.playbackRate = 0.4; // 0.5 = chậm 50%
