@@ -28,4 +28,4 @@ $(function () {
 
 // slow motion video
 const video = document.getElementById("bg-video");
-video.playbackRate = 0.4; // 0.5 = chậm 50%
+video.playbackRate = 0.3; // 0.5 = chậm 50%
