@@ -112,4 +112,19 @@
 h2 {
   @apply mt-2 text-xs text-center lg:text-base text-white/50;
 }
-/*  */
+
+/* benefits-slide  */
+.best-product-info {
+  @apply mt-9;
+
+  h3 {
+    @apply text-lg font-semibold md:text-2xl text-p-900;
+  }
+  p {
+    @apply max-w-lg mt-4;
+  }
+
+  #best-sellers img {
+    @apply md:max-w-[400px] md:h-[70vh];
+  }
+}
