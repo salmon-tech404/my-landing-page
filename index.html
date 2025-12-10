@@ -18,13 +18,37 @@
     />
 
     <!-- css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/animated-counter-prograssbar.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
+    />
     <link rel="stylesheet" href="./css/showHideNav.css" />
     <link rel="stylesheet" href="./dist/output.css" />
 
+    <!-- Jquery -->
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- javascript -->
     <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script defer src="./js/jquery.hidescroll.js"></script>
     <script defer src="./js/tabHandle.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"
+    ></script>
+    <script defer src="./js/animated-counter-prograssbar.js"></script>
     <script defer type="module" src="./js/main.js"></script>
 
     <title>Leaf & Brew</title>
@@ -406,11 +430,10 @@
                     lọc tinh thần. Đây là lựa chọn hoàn hảo cho những ai muốn
                     thư giãn sau một ngày dài, hoặc làm dịu hệ tiêu hóa sau bữa
                     ăn.<br />
-
-                    Bạc hà được thu hoạch từ những cánh đồng tươi mát, phơi khô
-                    tự nhiên và giữ trọn vẹn tinh dầu thơm mát. Khi pha, trà có
-                    màu vàng nhạt hoặc xanh nhẹ, hương bạc hà lan tỏa mạnh mẽ,
-                    mang đến...
+                    Bạc hà được thu hoạch từ những cánh đồng tươi mát, phơi
+                    khôtự nhiên và giữ trọn vẹn tinh dầu thơm mát. Khi pha, trà
+                    có màu vàng nhạt hoặc xanh nhẹ, hương bạc hà lan tỏa mạnh
+                    mẽ, mang đến...
                   </p>
                   <button class="w-[200px] h-auto">
                     <a class="btn" href=""
@@ -535,60 +558,398 @@
             giãn của bạn mỗi ngày.
           </p>
         </div>
-        <!-- product 1 -->
-        <div class="mt-9 slider">
-          <div class="flex! md:flex-row items-center justify-center gap-10">
-            <!-- product_info -->
-            <div class="">
-              <!-- left -->
-              <div class="flex-1 best-product--left">
-                <!-- Title -->
-                <div class="best-product-info">
-                  <h3>Trà Oolong Thuần Nhã</h3>
-                  <p>
-                    Mang hương vị thanh tao từ những đồi trà cao sương phủ,
-                    Oolong Thuần Nhã là sự kết hợp giữa vị ngọt dịu, hậu sâu và
-                    hương hoa nhẹ nhàng. Mỗi ngụm trà mở ra cảm giác thư thái,
-                    giúp tinh thần tỉnh táo mà không gây gắt chát. Đây là lựa
-                    chọn hoàn hảo cho những ai tìm kiếm sự cân bằng giữa truyền
-                    thống và sự tinh tế hiện đại.
-                  </p>
+        <div class="lg:px-4 md:x-2 mt-9 slider">
+          <!-- product 1 -->
+          <div class="mt-9">
+            <div
+              class="flex! flex-col md:flex-row items-center justify-center md:gap-36 gap-10"
+            >
+              <!-- product_info -->
+              <div class="">
+                <!-- left -->
+                <div class="flex-1 best-product--left">
+                  <!-- Title -->
+                  <div class="best-product-info">
+                    <h3>Trà Oolong Thuần Nhã</h3>
+                    <p>
+                      Mang hương vị thanh tao từ những đồi trà cao sương phủ,
+                      Oolong Thuần Nhã là sự kết hợp giữa vị ngọt dịu, hậu sâu
+                      và hương hoa nhẹ nhàng. Mỗi ngụm trà mở ra cảm giác thư
+                      thái, giúp tinh thần tỉnh táo mà không gây gắt chát. Đây
+                      là lựa chọn hoàn hảo cho những ai tìm kiếm sự cân bằng
+                      giữa truyền thống và sự tinh tế hiện đại.
+                    </p>
+                  </div>
+                </div>
+                <!-- benifit -->
+                <div class="benefits-bar" id="firstbar">
+                  <div>
+                    <!-- hàng trên -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Giúp cơ thể thả lỏng và thư thái hơn</h4>
+                      <!-- progress bar -->
+                      <div progress-bar data-percentage="90%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                      <!-- progress bar end -->
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Nguồn năng lượng tươi mới mỗi ngày</h4>
+                      <div progress-bar data-percentage="86%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <!-- hàng dưới -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Chống oxy hoá, hỗ trợ sức khỏe lâu dài</h4>
+                      <div progress-bar data-percentage="93%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Tăng cường năng lượng và tập trung</h4>
+                      <div progress-bar data-percentage="99%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!-- benifit -->
-              <div class="benefits-bar id="firstbar"">
-                <div>
-                  <!-- hàng trên -->
-                  <div class="flex-1 progressbar-item">
-                    <h4>Giúp cơ thể thả lỏng và thư thái hơn</h4>
-                  </div>
-                  <div class="flex-1 progressbar-item">
-                    <h4>Mang đến nguồn năng lượng tươi mới mỗi ngày</h4>
-                  </div>
-                </div>
-                <div class="">
-                  <!-- hàng dưới -->
-                  <div class="flex-1 progressbar-item">
-                    <h4>Chống oxy hoá, hỗ trợ sức khỏe lâu dài</h4>
-                  </div>
-                  <div class="flex-1 progressbar-item">
-                    <h4>Tăng cường năng lượng và tập trung</h4>
-                  </div>
-                </div>
+              <!-- img -->
+              <div class="seller-img">
+                <img
+                  src="./assets/best-seller/best-seller-oolong-01.jpg"
+                  alt="olong"
+                />
               </div>
             </div>
-            <!-- img -->
-            <div class="">
-              <img
-                src="./assets/best-seller/best-seller-oolong-01.jpg"
-                alt="olong"
-              />
+          </div>
+          <!-- product 2 -->
+          <div class="mt-9">
+            <div
+              class="flex! flex-col md:flex-row items-center justify-center gap-10"
+            >
+              <!-- product_info -->
+              <div class="">
+                <!-- left -->
+                <div class="flex-1 best-product--left">
+                  <!-- Title -->
+                  <div class="best-product-info">
+                    <h3>Trà Xanh Sencha Thượng Hạng</h3>
+                    <p>
+                      Được chế biến từ những búp trà xanh đầu mùa, Sencha Thượng
+                      Hạng mang đến sắc nước trong trẻo và vị tươi mát đặc
+                      trưng. Lớp hương thanh khiết lan nhẹ, hậu vị ngọt sâu
+                      khiến mỗi lần thưởng thức đều trở thành một trải nghiệm
+                      mới. Loại trà này không chỉ giúp thư giãn mà còn là nguồn
+                      năng lượng tinh sạch cho ngày dài.
+                    </p>
+                  </div>
+                </div>
+                <!-- benifit -->
+                <div class="benefits-bar" id="firstbar">
+                  <div>
+                    <!-- hàng trên -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Giúp cơ thể thả lỏng và thư thái hơn</h4>
+                      <div progress-bar data-percentage="90%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Nguồn năng lượng tươi mới mỗi ngày</h4>
+                      <div progress-bar data-percentage="99%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <!-- hàng dưới -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Chống oxy hoá, hỗ trợ sức khỏe lâu dài</h4>
+                      <div progress-bar data-percentage="82%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Tăng cường năng lượng và tập trung</h4>
+                      <div progress-bar data-percentage="88%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- img -->
+              <div class="seller-img">
+                <img
+                  src="./assets/best-seller/best-seller-sencha-02.jpg"
+                  alt="olong"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- product 3 -->
+          <div class="mt-9">
+            <div
+              class="flex! flex-col md:flex-row items-center justify-center gap-10"
+            >
+              <!-- product_info -->
+              <div class="">
+                <!-- left -->
+                <div class="flex-1 best-product--left">
+                  <!-- Title -->
+                  <div class="best-product-info">
+                    <h3>Hồng Trà Assam Đậm Vị</h3>
+                    <p>
+                      Hồng Trà Assam Đậm Vị là lựa chọn yêu thích của những
+                      người thích vị trà mạnh mẽ, nồng nhiệt. Được oxy hóa hoàn
+                      toàn, trà sở hữu màu đỏ hổ phách cuốn hút và hương thơm
+                      tròn đầy. Vị ngọt hậu kéo dài tạo nên cảm giác ấm áp, phù
+                      hợp cho buổi sáng bận rộn hay những lúc cần tái tạo năng
+                      lượng.
+                    </p>
+                  </div>
+                </div>
+                <!-- benifit -->
+                <div class="benefits-bar" id="firstbar">
+                  <div>
+                    <!-- hàng trên -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Giúp cơ thể thả lỏng và thư thái hơn</h4>
+                      <div progress-bar data-percentage="100%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Nguồn năng lượng tươi mới mỗi ngày</h4>
+                      <div progress-bar data-percentage="93%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <!-- hàng dưới -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Chống oxy hoá, hỗ trợ sức khỏe lâu dài</h4>
+                      <div progress-bar data-percentage="90%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Tăng cường năng lượng và tập trung</h4>
+                      <div progress-bar data-percentage="85%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- img -->
+              <div class="seller-img">
+                <img
+                  src="./assets/best-seller/best-seller-assam-03.jpg"
+                  alt="olong"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- product 4 -->
+          <div class="mt-9">
+            <div
+              class="flex! flex-col md:flex-row items-center justify-center gap-10"
+            >
+              <!-- product_info -->
+              <div class="">
+                <!-- left -->
+                <div class="flex-1 best-product--left">
+                  <!-- Title -->
+                  <div class="best-product-info">
+                    <h3>Trà Hoa Nhài Tinh Khiết</h3>
+                    <p>
+                      Từng cánh lá trà được ướp cùng hoa nhài tươi trong đêm để
+                      giữ trọn hương thơm dịu nhẹ, thanh khiết. Trà Hoa Nhài
+                      Tinh Khiết mang đến hương hoa tự nhiên hòa quyện cùng vị
+                      trà mềm mại, giúp giải tỏa căng thẳng và mang đến cảm giác
+                      bình yên trong từng khoảnh khắc. Đây là dòng sản phẩm được
+                      khách hàng ưa chuộng bởi sự nhẹ nhàng và dễ uống.
+                    </p>
+                  </div>
+                </div>
+                <!-- benifit -->
+                <div class="benefits-bar" id="firstbar">
+                  <div>
+                    <!-- hàng trên -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Giúp cơ thể thả lỏng và thư thái hơn</h4>
+                      <div progress-bar data-percentage="99%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Nguồn năng lượng tươi mới mỗi ngày</h4>
+                      <div progress-bar data-percentage="94%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <!-- hàng dưới -->
+                    <div class="flex-1 progressbar-item">
+                      <h4>Chống oxy hoá, hỗ trợ sức khỏe lâu dài</h4>
+                      <div progress-bar data-percentage="82%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-1 progressbar-item">
+                      <h4>Tăng cường năng lượng và tập trung</h4>
+                      <div progress-bar data-percentage="96%">
+                        <div class="progress-number">
+                          <div class="progress-number-mark">
+                            <span class="percent"></span>
+                            <span class="down-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="progress-bg">
+                          <div class="progress-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- img -->
+              <div class="seller-img">
+                <img
+                  src="./assets/best-seller/best-seller-hoanhai-04.jpg"
+                  alt="olong"
+                />
+              </div>
             </div>
           </div>
         </div>
-        <!-- product 2 -->
-        <!-- product 3 -->
-        <!-- product 4 -->
       </div>
     </section>
   </body>

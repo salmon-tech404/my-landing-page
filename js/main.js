@@ -31,3 +31,10 @@ const video = document.getElementById("bg-video");
 video.playbackRate = 0.3; // 0.5 = chậm 50%
 
 // benefits-slide
+$(function () {
+  $(".slider").slick({
+    // autoplay: true,
+    dots: true,
+    speed: 900,
+  });
+});

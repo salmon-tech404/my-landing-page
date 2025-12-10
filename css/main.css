@@ -120,11 +120,23 @@ h2 {
   h3 {
     @apply text-lg font-semibold md:text-2xl text-p-900;
   }
+
   p {
-    @apply max-w-lg mt-4;
+    @apply max-w-lg mt-4 mb-10;
   }
 
   #best-sellers img {
-    @apply md:max-w-[400px] md:h-[70vh];
+    @apply absolute inset-0 w-full h-full object-cover object-center top-3;
   }
+}
+
+.seller-img {
+  @apply relative w-[450px] h-[450px] overflow-hidden rounded-xl;
+
+  img {
+    @apply absolute inset-0 w-full h-full object-cover object-center;
+  }
+}
+.progressbar-item {
+  @apply text-lg font-bold;
 }
