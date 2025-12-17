@@ -48,6 +48,10 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"
     ></script>
+    <script
+      defer
+      src="https://unpkg.com/counterup2@2.0.2/dist/index.js"
+    ></script>
     <script defer src="./js/animated-counter-prograssbar.js"></script>
     <script defer type="module" src="./js/main.js"></script>
 
@@ -76,46 +80,91 @@
           </a>
 
           <!-- nav link -->
-          <nav class="items-center justify-end hidden gap-4 lg:gap-8 lg:flex">
+          <nav class="items-center justify-end hidden gap-2 lg:gap-8 lg:flex">
             <a
               href="./"
-              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 navLink hover:bg-p-700 hover:scale-105"
+              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 hover:bg-p-700 hover:scale-105"
               >SẢN PHẨM</a
             >
             <a
               href="./"
-              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 navLink hover:bg-p-700 hover:scale-105"
+              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 hover:bg-p-700 hover:scale-105"
               >VỀ CHUNG TÔI</a
             >
             <a
               href="./"
-              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 navLink hover:bg-p-700 hover:scale-105"
+              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 hover:bg-p-700 hover:scale-105"
               >KHUYẾN MÃI</a
             >
             <a
               href="./"
-              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 navLink hover:bg-p-700 hover:scale-105"
+              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 hover:bg-p-700 hover:scale-105"
               >HỘI VIÊN</a
             >
             <a
               href="./"
-              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 navLink hover:bg-p-700 hover:scale-105"
+              class="px-4 py-1.5 lg:px-6 lg:py-2.5 lg:text-xl text-white transition duration-150 ease-in-out md:text-base bg-p-900 hover:bg-p-700 hover:scale-105"
               >BLOG</a
             >
-            <div class="cursor-pointer">
+            <!-- icon 
+            <div class="cursor-pointer xl:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                class="transition duration-150 ease-in-out lg:size-14 size-12 text-p-900 hover:text-p-700"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-12 lg:size-14 text-p-900 hover:text-p-700"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                  clip-rule="evenodd"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
+              <div
+                id="mobileMenu"
+                class="absolute right-0 z-50 hidden w-48 mt-2 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+                role="menu"
+                aria-labelledby="menuButton"
+              >
+                <ul class="flex flex-col py-2">
+                  <li role="none">
+                    <a
+                      role="menuitem"
+                      href="#home"
+                      class="block px-4 py-2 text-sm hover:bg-gray-100"
+                      >Trang chủ</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a
+                      role="menuitem"
+                      href="#sanpham"
+                      class="block px-4 py-2 text-sm hover:bg-gray-100"
+                      >Sản phẩm</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a
+                      role="menuitem"
+                      href="#gioithieu"
+                      class="block px-4 py-2 text-sm hover:bg-gray-100"
+                      >Giới thiệu</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a
+                      role="menuitem"
+                      href="#lienhe"
+                      class="block px-4 py-2 text-sm hover:bg-gray-100"
+                      >Liên hệ</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
+            -->
           </nav>
         </div>
       </div>
@@ -215,11 +264,13 @@
           Một tách trà, muôn hương vị
         </p>
         <!--  -->
-        <div id="products-tabs" class="flex flex-col gap-4 tab-links">
+        <div id="products-tabs" class="flex flex-col gap-2 tab-links">
+          <!-- flex flex-col gap-4 tab-links -->
           <!-- tab -->
           <ul
-            class="flex flex-wrap items-center justify-center gap-6 my-8 text-xl font-medium tracking-wider uppercase font-inter md:gap-4"
+            class="flex flex-wrap items-center justify-center gap-2 my-6 text-lg font-medium tracking-wider uppercase font-inter md:gap-4"
           >
+            <!-- "flex flex-wrap items-center justify-center gap-6 my-8 text-xl font-medium tracking-wider uppercase font-inter md:gap-4" -->
             <li>
               <a
                 href="#olong"
@@ -262,14 +313,18 @@
           </ul>
 
           <!-- content -->
-          <div class="tab-content-wrapper">
+          <div class="tab-content-wrapper max-h-[850px] overflow-hidden">
+            <!-- tab-content-wrapper max-h-[500px] overflow-hidden -->
+            <!-- oloong -->
             <div id="olong" class="tab-content active">
-              <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+              <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
+                <!-- grid grid-cols-1 gap-12 md:grid-cols-3 -->
                 <img
-                  src="./assets/product_1.jpg"
+                  src="./assets/products/product-oloong.jpg"
                   alt="matcha"
-                  class="object-cover col-span-2 productImg"
+                  class="col-span-2 productImg"
                 />
+                <!-- object-[center_-180px] col-span-2 productImg -->
                 <div class="grid grid-flow-row gap-4 auto-rows-max">
                   <h3
                     class="text-2xl font-semibold tracking-wider underline uppercase font-inter decoration-solid"
@@ -282,17 +337,14 @@
                   <p class="text-lg font-inter">
                     Trà Oolong là một trong những loại trà bán lên men nhẹ, nổi
                     bật với hương thơm tự nhiên tinh tế và vị hậu ngọt lâu dài
-                    trên đầu lưỡi. Xuất xứ từ các vùng núi cao của Trung Quốc và
-                    Đài Loan, lá trà Oolong trải qua quy trình chế biến cầu kỳ,
-                    bao gồm làm héo, lăn, lên men một phần và sấy khô, tạo nên
-                    sự cân bằng giữa hương thơm của trà xanh và độ đậm đà của
-                    trà đen.<br />
-                    Oolong nổi bật với khả năng giúp tinh thần tỉnh táo, thúc
-                    đẩy tuần hoàn máu và hỗ trợ tiêu hóa. Hương vị của trà
-                    Oolong mềm mại, hơi ngọt, đôi khi mang chút hương hoa nhẹ
-                    nhàng, tạo cảm giác...
+                    trên đầu lưỡi. <br />Xuất xứ từ các vùng núi cao của Trung
+                    Quốc và Đài Loan, lá trà Oolong trải qua quy trình chế biến
+                    cầu kỳ, bao gồm làm héo, lăn, lên men một phần và sấy khô,
+                    tạo nên sự cân bằng giữa hương thơm của trà xanh và độ đậm
+                    đà của trà đen tạo cảm giác...
                   </p>
-                  <button class="w-[200px] h-auto">
+                  <button class="w-[140px] h-auto">
+                    <!-- w-[200px] h-auto -->
                     <a class="btn" href=""
                       >Chi tiết <img src="./assets/right-arrow.svg" alt=""
                     /></a>
@@ -300,12 +352,13 @@
                 </div>
               </div>
             </div>
+            <!-- Sencha -->
             <div id="sencha" class="tab-content">
               <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
                 <img
-                  src="./assets/product_1.jpg"
-                  alt="matcha"
-                  class="object-cover col-span-2 productImg"
+                  src="./assets/products/product-sencha02.jpg"
+                  alt="sencha"
+                  class="col-span-2 object-[center_-100px] productImg"
                 />
                 <div class="grid grid-flow-row gap-4 auto-rows-max">
                   <h3
@@ -327,7 +380,7 @@
                     chát nhẹ xen lẫn hậu ngọt, mang đến cảm giác sảng khoái ngay
                     từ ngụm đầu tiên. Sencha thường...
                   </p>
-                  <button class="w-[200px] h-auto">
+                  <button class="w-[140px] h-auto">
                     <a class="btn" href=""
                       >Chi tiết <img src="./assets/right-arrow.svg" alt=""
                     /></a>
@@ -335,12 +388,13 @@
                 </div>
               </div>
             </div>
+            <!-- hongcha -->
             <div id="hongcha" class="tab-content">
               <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
                 <img
-                  src="./assets/product_1.jpg"
-                  alt="matcha"
-                  class="object-cover col-span-2 productImg"
+                  src="./assets/products/product-asam.jpg"
+                  alt="assam"
+                  class="object-cover object-[center_-90px] col-span-2 productImg"
                 />
                 <div class="grid grid-flow-row gap-4 auto-rows-max">
                   <h3
@@ -363,7 +417,7 @@
                     tách trà Assam, bạn sẽ cảm nhận vị ngọt hậu lâu dài cùng
                     hương đất và hương hoa...
                   </p>
-                  <button class="w-[200px] h-auto">
+                  <button class="w-[140px] h-auto">
                     <a class="btn" href=""
                       >Chi tiết <img src="./assets/right-arrow.svg" alt=""
                     /></a>
@@ -371,10 +425,11 @@
                 </div>
               </div>
             </div>
+            <!-- hoa nhai -->
             <div id="hoanhai" class="tab-content">
               <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
                 <img
-                  src="./assets/product_1.jpg"
+                  src="./assets/products/product-jasmin.jpg"
                   alt="matcha"
                   class="object-cover col-span-2 productImg"
                 />
@@ -396,11 +451,9 @@
 
                     Quy trình ướp hoa nhài với lá trà đòi hỏi kỹ thuật tinh tế:
                     lá trà được trộn với hoa nhài tươi vào ban đêm, để lá hấp
-                    thụ trọn vẹn hương thơm tự nhiên của hoa. Khi pha, trà có
-                    màu vàng sáng hoặc xanh nhạt, hương hoa nhài lan tỏa dịu
-                    dàng và vị trà mềm mại. Trà hoa nhài giúp...
+                    thụ trọn vẹn hương thơm...
                   </p>
-                  <button class="w-[200px] h-auto">
+                  <button class="w-[140px] h-auto">
                     <a class="btn" href=""
                       >Chi tiết <img src="./assets/right-arrow.svg" alt=""
                     /></a>
@@ -408,10 +461,11 @@
                 </div>
               </div>
             </div>
+            <!-- pepermint -->
             <div id="peppermint" class="tab-content">
               <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
                 <img
-                  src="./assets/product_1.jpg"
+                  src="./assets/products/product-peppermint.jpg"
                   alt="matcha"
                   class="object-cover col-span-2 productImg"
                 />
@@ -449,13 +503,13 @@
     </section>
 
     <!-- background video -->
-    <section id="video-slogan" class="mt-30 overflow-clip">
+    <section id="video-slogan" class="mt-10 overflow-clip">
       <div
-        class="relative flex items-center justify-center xl:h-[300px] 2xl:h-[350px] bg-amber-100"
+        class="relative flex h-[200px] items-center justify-center xl:h-[300px] 2xl:h-[350px]"
       >
         <video
           id="bg-video"
-          poster="./assets/green-tea-leaf-with-wind-motion.mp4"
+          poster="/assets/green-tea-leaf-with-wind-motion.mp4"
           autoplay
           loop
           muted
@@ -463,23 +517,26 @@
           class="absolute inset-0 object-cover w-full h-full"
         ></video>
         <p
-          class="relative z-10 flex items-center justify-center text-2xl antialiased font-normal leading-8 text-center text-white xl:3xl"
+          class="relative z-10 flex max-w-[400px] items-center justify-center text-base font-normal leading-8 text-center text-white py-6"
         >
+          <!-- relative z-10 flex items-center justify-center text-2xl antialiased font-normal leading-8 text-center text-white -->
           Mỗi sản phẩm trà là sự kết hợp giữa quy trình hiện đại và tinh hoa
           truyền thống, giữ nguyên hương vị tự nhiên của từng lá. <br />Nhờ vậy,
           hương vị tự nhiên của từng lá trà luôn được giữ trọn.
         </p>
       </div>
     </section>
+
     <!-- features -->
     <section id="features">
-      <div class="container relative m-20 text-center">
+      <div class="container relative text-center">
+        <!-- container relative m-20 text-center -->
         <!-- hàng 1 -->
         <div
           class="flex flex-col items-center justify-center w-full gap-0 md:gap-10 md:flex-row"
         >
           <div
-            class="feature-card group bg-[url(/assets/features/feature-01.jpg)] bg-cover bg-center"
+            class="feature-card group bg-[url(/assets/features/feature-01.jpg)]"
           >
             <div class="feature-filter"></div>
             <h3>Nguồn Cung Cao Cấp</h3>
@@ -489,9 +546,10 @@
             </p>
           </div>
 
-          <div class="order-first md:order-0 feature-card">
+          <div class="order-first m-10 md:order-0 md:feature-card">
+            <!-- order-first md:order-0 feature-card -->
             <div>
-              <h2 class="sub_heading">WHY US?</h2>
+              <h2 class="text-p-900! p-2 sub_heading">WHY US?</h2>
               <h1 class="leading-loose text-center main_heading">
                 Sự <span class="text-gradient">độc đáo</span> từ <br />Leaf &
                 Brew
@@ -500,7 +558,7 @@
           </div>
 
           <div
-            class="feature-card bg-[url(/assets/features/feature-02.jpg)] bg-cover group bg-center"
+            class="feature-card group bg-[url(/assets/features/feature-02.jpg)]"
           >
             <div class="feature-filter"></div>
             <h3>Hương vị và pha chế độc đáo</h3>
@@ -515,7 +573,7 @@
           class="flex flex-col items-center justify-center gap-0 md:gap-10 md:flex-row"
         >
           <div
-            class="feature-card bg-[url(/assets/features/feature-03.jpg)] group bg-cover bg-center"
+            class="feature-card group bg-[url(/assets/features/feature-03.jpg)]"
           >
             <div class="feature-filter"></div>
             <h3>Tập trung vào sức khỏe</h3>
@@ -525,7 +583,7 @@
             </p>
           </div>
           <div
-            class="feature-card bg-[url(/assets/features/feature-04.jpg)] bg-cover group bg-center"
+            class="feature-card bg-[url(/assets/features/feature-04.jpg)] group"
           >
             <div class="feature-filter"></div>
             <h3>Trải Nghiệm Cá Nhân Hoá</h3>
@@ -540,7 +598,8 @@
 
     <!-- Best sellers -->
     <section id="best-sellers">
-      <div class="container my-20">
+      <div class="container y-6">
+        <!-- my-20 -->
         <!-- About -->
         <div class="flex flex-col gap-4">
           <div class="flex flex-col items-start text-left">
@@ -550,7 +609,7 @@
               <span class="text-gradient">Ưa Chuộng Nhất</span>
             </h1>
           </div>
-          <p class="w-[500px]">
+          <p class="w-[400px]">
             Khám phá bộ sưu tập những dòng trà luôn nằm trong lựa chọn hàng đầu
             của khách hàng. Mỗi sản phẩm đều được tạo nên từ nguyên liệu tinh
             tuyển và hương vị hài hòa, mang đến trải nghiệm thưởng trà trọn vẹn.
@@ -558,14 +617,14 @@
             giãn của bạn mỗi ngày.
           </p>
         </div>
-        <div class="lg:px-4 md:x-2 mt-9 slider">
+        <div class="p-4 lg:px-4 md:x-2 slider">
           <!-- product 1 -->
-          <div class="mt-9">
+          <div class="">
             <div
               class="flex! flex-col md:flex-row items-center justify-center md:gap-36 gap-10"
             >
               <!-- product_info -->
-              <div class="">
+              <div class="p-6">
                 <!-- left -->
                 <div class="flex-1 best-product--left">
                   <!-- Title -->
@@ -664,7 +723,7 @@
               class="flex! flex-col md:flex-row items-center justify-center gap-10"
             >
               <!-- product_info -->
-              <div class="">
+              <div class="p-6">
                 <!-- left -->
                 <div class="flex-1 best-product--left">
                   <!-- Title -->
@@ -761,7 +820,7 @@
               class="flex! flex-col md:flex-row items-center justify-center gap-10"
             >
               <!-- product_info -->
-              <div class="">
+              <div class="p-6">
                 <!-- left -->
                 <div class="flex-1 best-product--left">
                   <!-- Title -->
@@ -858,7 +917,7 @@
               class="flex! flex-col md:flex-row items-center justify-center gap-10"
             >
               <!-- product_info -->
-              <div class="">
+              <div class="p-6">
                 <!-- left -->
                 <div class="flex-1 best-product--left">
                   <!-- Title -->
@@ -952,5 +1011,262 @@
         </div>
       </div>
     </section>
+
+    <!-- Stats -->
+    <section
+      id="stats"
+      class="relative w-full bg-position-[0%_35%] md:h-60 lg:h-[380px] bg-no-repeat mb-16 bg-cover bg-[url('/assets/stats/stat-background-01.jpg')] flex items-center justify-center"
+    >
+      <!-- relative w-full bg-position-[0%_35%] md:h-60 lg:h-[380px] bg-no-repeat mb-20 bg-cover bg-[url('/assets/stats/stat-background-01.jpg')] flex items-center justify-center -->
+      <!-- overlay -->
+      <div class="absolute inset-0 bg-p-950/30"></div>
+      <!-- nội dung 1-->
+      <div
+        class="container relative z-10 flex items-center justify-center gap-10"
+      >
+        <div class="flex flex-col items-center gap-4 text-white">
+          <div class="text-center stats-item">
+            <h1 class="font-bold text-8xl text-gradient counter">100+</h1>
+            <h2 class="text-xl">Hương Vị Tuyệt Hảo</h2>
+          </div>
+        </div>
+        <svg
+          viewBox="-1 -1 3 137"
+          width="3"
+          height="137"
+          class="hidden md:block"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="lineGradient"
+              x1="0"
+              y1="0"
+              x2="-5.90104e-06"
+              y2="135"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="white" stop-opacity="0" />
+              <stop offset="0.494792" stop-color="white" />
+              <stop offset="1" stop-color="white" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <line
+            x1="0.5"
+            y1="0"
+            x2="0.5"
+            y2="135"
+            stroke="url(#lineGradient)"
+            stroke-opacity="0.3"
+            fill="none"
+          />
+        </svg>
+        <div class="flex flex-col items-center gap-4 text-white">
+          <div class="text-center stats-item">
+            <h1 class="font-bold text-8xl text-gradient counter">500k+</h1>
+            <h2 class="text-xl">Sản Phẩm Được Tin Dùng Toàn Cầu</h2>
+          </div>
+        </div>
+        <svg
+          viewBox="-1 -1 3 137"
+          width="3"
+          height="137"
+          class="hidden md:block"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="lineGradient"
+              x1="0"
+              y1="0"
+              x2="-5.90104e-06"
+              y2="135"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="white" stop-opacity="0" />
+              <stop offset="0.494792" stop-color="white" />
+              <stop offset="1" stop-color="white" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <line
+            x1="0.5"
+            y1="0"
+            x2="0.5"
+            y2="135"
+            stroke="url(#lineGradient)"
+            stroke-opacity="0.3"
+            fill="none"
+          />
+        </svg>
+        <div class="flex flex-col items-center gap-4 text-white">
+          <div class="text-center stats-item">
+            <h1 class="font-bold text-8xl text-gradient counter">4.9+</h1>
+            <h2 class="text-xl">Đánh Giá Từ Khách Hàng</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section id="story">
+      <!-- lớp chứa hình nền -->
+      <div
+        class="flex justify-end h-screen max-h-[1100px] p-0 w-full max-w-none bg-[url(/assets/stats/stat-background-02.jpg)] bg-no-repeat bg-center bg-cover"
+      >
+        <!-- lớp overlay chiếm 2/3 màn hình -->
+        <div class="w-full h-full lg:w-2/3 bg-p-950/60 p-9">
+          <div
+            class="container relative flex items-center justify-center h-full md:justify-end 2xl:justify-center"
+          >
+            <!-- watermark -->
+            <div
+              data-aos="fade-right"
+              class="absolute hidden -translate-y-1/2 xl:right-350 right-150 translate-x-36 top-1/2 md:block 2xl:translate-x-0"
+            >
+              <h1
+                class="hidden uppercase -rotate-90 text-[168px] text-center leading-[148px] font-bold text-p-50 opacity-20"
+              >
+                <!-- class="uppercase -rotate-90 text-[168px] text-center leading-[148px] font-bold text-p-50 opacity-20" -->
+                LEAF <br />
+                BREW
+              </h1>
+            </div>
+
+            <!-- nội dung chính -->
+            <div
+              class="flex flex-col items-center justify-center left-10 xl:left-0"
+              data-aos="fade-left"
+            >
+              <!-- relative left-30 xl:left-0 -->
+              <div class="flex flex-col items-center justify-center mb-9">
+                <h2 class="text-p-200! sub_heading">Khám phá</h2>
+                <h1 class="text-white main_heading">Câu chuyện & sứ mệnh</h1>
+              </div>
+
+              <p
+                class="leading-10 text-center text-n-200 w-104 xl:w-180 max-w-200"
+              >
+                <!-- text-n-200 w-120 xl:w-180 max-w-200 -->
+                Tại Leaf & Brew, chúng tôi theo đuổi hành trình tạo nên những
+                dòng trà tinh tế, tôn vinh hương vị thuần khiết và giá trị cho
+                sức khỏe. Từ những nguyên liệu được tuyển chọn kỹ lưỡng, từng mẻ
+                trà được pha trộn với sự tỉ mỉ và niềm đam mê, để mỗi tách trà
+                đều mang đến một trải nghiệm trọn vẹn.
+                <br class="hidden md:block" />
+                Gắn liền với tinh thần bền vững và sự đồng hành cùng cộng đồng
+                địa phương, chúng tôi mong muốn gửi đến bạn không chỉ một thức
+                uống, mà còn là sự kết nối với thiên nhiên, văn hóa và câu
+                chuyện đằng sau từng lá trà. Hãy cùng chúng tôi khám phá hành
+                trình đầy cảm hứng ấy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact us -->
+    <section id="contact">
+      <div class="container my-20">
+        <div class="flex flex-col w-full gap-10 lg:flex-row">
+          <!-- thông tin liên hệ -->
+          <div
+            class="flex h-[515px] flex-col items-start flex-1 w-full px-10 py-20 border border-dotted border-p-600 gap-9"
+          >
+            <!-- tiêu đề -->
+            <div data-aos="fade-down">
+              <h2 class="sub_heading">Có câu hỏi?</h2>
+              <h1 class="main_heading">Liên hệ Leaf & Brew tại</h1>
+            </div>
+
+            <!-- địa chỉ -->
+            <div class="contact-info">
+              <div>
+                <img
+                  src="./assets/building.svg"
+                  alt="building"
+                  class="size-4"
+                />
+                <h1>Địa Chỉ</h1>
+              </div>
+
+              <p>
+                123 Phan Đình Phùng, Phường 1, Quận Tân Bình, Thành phố Hồ Chí
+                Minh, VN
+              </p>
+            </div>
+
+            <!-- email -->
+            <div class="contact-info">
+              <div>
+                <img src="./assets/mail.svg" alt="building" class="size-4" />
+                <h1>Email</h1>
+              </div>
+
+              <p>lb.service@example.com</p>
+            </div>
+
+            <!-- số điện thoại -->
+            <div class="contact-info">
+              <div>
+                <img src="./assets/phone.svg" alt="building" class="size-4" />
+                <h1>Điện Thoại</h1>
+              </div>
+
+              <p>(+84) 36 4565 789</p>
+            </div>
+          </div>
+
+          <!-- form đăng ký theo dõi -->
+          <div
+            class="relative text-center flex flex-col items-center w-full flex-1 h-[515px] px-10 py-20 gap-9 border border-p-600 overflow-clip"
+          >
+            <!-- heading -->
+            <div data-aos="fade-down">
+              <h2 class="sub_heading">Cập nhập bản tin</h2>
+              <h1 class="main_heading">Đăng ký theo dõi</h1>
+            </div>
+
+            <p>Đăng ký nhận bản tin của chúng tôi và cập nhật thông tin.</p>
+
+            <!-- email input -->
+            <div class="relative w-[250px] md:w-[350px]">
+              <input
+                type="email"
+                placeholder="Nhập địa chỉ email của bạn"
+                class="w-full px-12 py-3 border border-p-600"
+              />
+              <img
+                src="./assets/mail2.svg"
+                alt="mail icon"
+                class="absolute -translate-y-1/2 top-1/2 left-4"
+              />
+            </div>
+
+            <!-- nút theo dõi -->
+            <button class="flex-none border-p-600! w-[250px] md:w-[350px]">
+              <div class="capitalize btn bg-p-600! hover:bg-p-700!">
+                <span class="w-full text-center">Đồng Ý Theo Dõi</span>
+              </div>
+            </button>
+
+            <!-- hình decor -->
+            <img
+              src="./assets/contact.png"
+              alt="decor"
+              class="absolute -bottom-20 -right-20 w-[400px] opacity-15 -z-10"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----------------- 
+    Footer
+    ------------------>
+    <footer class="bg-p-950">
+      <div class="container text-white/70">
+        <p class="text-center mt-9">© Leaf & Brew's Copyright 2025</p>
+      </div>
+    </footer>
   </body>
 </html>
